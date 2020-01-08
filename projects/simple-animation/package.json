@@ -1,10 +1,11 @@
 {
-  "name": "simple-animation",
+  "name": "angular-simple-animation",
   "version": "0.0.1",
   "description": "Simple animating angular components and directives.",
   "author": {
     "name": "Vashist Srinivasan"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/vashistrao/simple-animation.git"
