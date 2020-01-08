@@ -1,6 +1,21 @@
 {
   "name": "simple-animation",
   "version": "0.0.1",
+  "description": "Simple animating angular components and directives.",
+  "author": {
+    "name": "Vashist Srinivasan"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vashistrao/simple-animation.git"
+  },
+  "homepage": "https://github.com/vashistrao/simple-animation",
+  "keywords": [
+    "angular",
+    "animations",
+    "components",
+    "directives"
+  ],
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
