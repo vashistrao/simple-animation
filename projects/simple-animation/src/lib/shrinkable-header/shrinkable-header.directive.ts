@@ -1,9 +1,9 @@
-import { Directive, HostListener, ElementRef, Input, Renderer2 } from '@angular/core';
+import { Directive, HostListener, ElementRef, Input, Renderer2, AfterViewInit } from '@angular/core';
 
 @Directive({
   selector: '[saShrinkableHeader]'
 })
-export class ShrinkableHeaderDirective {
+export class ShrinkableHeaderDirective implements AfterViewInit {
 
   @Input() shrinkAt: number;
   private fontSize: number;
@@ -14,6 +14,9 @@ export class ShrinkableHeaderDirective {
   private divElement: any;
 
   constructor(private elRef: ElementRef, private renderer: Renderer2) {
+  }
+  
+  ngAfterViewInit(): void {
     this.initialHeight = this.elRef.nativeElement.offsetHeight;
     this.initialWidth = this.elRef.nativeElement.offsetWidht;
     this.intialScrollTop = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop || 0;
@@ -21,7 +24,6 @@ export class ShrinkableHeaderDirective {
     this.fontSizeUnit = this.elRef.nativeElement.style.fontSize.replace(this.fontSize, '');
     this.divElement = this.renderer.createElement('div');
     this.renderer.setStyle(this.divElement, 'height', `${this.initialHeight}px`);
-    //this.shrinker();
   }
 
   private shrinker(): void {
